@@ -5,19 +5,76 @@
 }
 
 body {
-    height: 100vh;
-    min-height: 597px;
+    /* height: 100vh; */
+    /* min-height: 597px; */
+    padding: 10% 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f5f5eb;
 }
 
 main {
-    background-color: #f5f5eb;
     height: 80%;
     width: 80%;
+    background-color: rgba(0, 0, 255, 0.422);
 }
 
 ul {
     list-style: none;
+}
+
+h1 {
+    font-size: 2.2rem;
+    padding: 2.5rem;
+}
+
+li {
+    transition: 0.5s;
+    height: 100px;
+    padding: 1.25rem 2.5rem;
+    border-top: 1px solid grey;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.visible {
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.visible>i {
+    display: none;
+}
+
+.invisible {
+    height: 0
+}
+
+img {
+    display: block;
+    width: 50%;
+    max-width: 500px;
+    height: 100%;
+    /* object-fit: cover; */
+}
+
+/******************************
+*** Hover and Focus effects *** 
+******************************/
+
+li:hover,
+li:focus {
+    height: 400px;
+    justify-content: space-between;
+}
+
+li:hover .invisible,
+li:focus .invisible {
+    height: 75%;
 }
