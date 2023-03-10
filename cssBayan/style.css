@@ -17,11 +17,11 @@ body {
 main {
     height: 80%;
     width: 80%;
-    background-color: rgba(0, 0, 255, 0.422);
 }
 
 ul {
     list-style: none;
+    transition: 0.5s;
 }
 
 h1 {
@@ -48,8 +48,17 @@ li {
     align-items: center;
 }
 
+h2 {
+    color: #0f61da;
+    transition: 0.5s;
+    font-size: 1.9rem;
+}
+
 .visible>i {
     display: none;
+    opacity: 0;
+    transition: 0.5s;
+    font-size: 24px;
 }
 
 .invisible {
@@ -77,4 +86,34 @@ li:focus {
 li:hover .invisible,
 li:focus .invisible {
     height: 75%;
+}
+
+ul:hover i.fa-plus {
+    display: block;
+    opacity: 1;
+}
+
+ul:hover h2,
+li:focus h2 {
+    color: black;
+}
+
+li:focus i.fa-plus {
+    display: none;
+    opacity: 0;
+}
+
+li:hover i.fa-plus {
+    display: none;
+    opacity: 0;
+}
+
+li:hover i.fa-xmark {
+    display: block;
+    opacity: 1;
+}
+
+li:focus i.fa-xmark {
+    display: block;
+    opacity: 1;
 }
