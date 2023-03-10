@@ -5,8 +5,6 @@
 }
 
 body {
-    /* height: 100vh; */
-    /* min-height: 597px; */
     padding: 10% 0;
     display: flex;
     justify-content: center;
@@ -52,13 +50,13 @@ h2 {
     color: #0f61da;
     transition: 0.5s;
     font-size: 1.9rem;
+    max-width: 75%;
 }
 
 .visible>i {
-    display: none;
     opacity: 0;
     transition: 0.5s;
-    font-size: 24px;
+    font-size: 0;
 }
 
 .invisible {
@@ -70,30 +68,22 @@ img {
     width: 50%;
     max-width: 500px;
     height: 100%;
-    /* object-fit: cover; */
+    margin: auto;
 }
 
 /******************************
 *** Hover and Focus effects *** 
 ******************************/
 
-li:hover,
 li:focus {
     height: 400px;
     justify-content: space-between;
 }
 
-li:hover .invisible,
 li:focus .invisible {
     height: 75%;
 }
 
-ul:hover i.fa-plus {
-    display: block;
-    opacity: 1;
-}
-
-ul:hover h2,
 li:focus h2 {
     color: black;
 }
@@ -101,19 +91,99 @@ li:focus h2 {
 li:focus i.fa-plus {
     display: none;
     opacity: 0;
-}
-
-li:hover i.fa-plus {
-    display: none;
-    opacity: 0;
-}
-
-li:hover i.fa-xmark {
-    display: block;
-    opacity: 1;
+    font-size: 0;
 }
 
 li:focus i.fa-xmark {
     display: block;
     opacity: 1;
+    font-size: 24px;
+}
+
+img:focus {
+    opacity: 0.7;
+}
+
+
+
+/********************
+*** Media Queries *** 
+*********************/
+
+
+/* hover effects for desktop screens only */
+
+@media (min-width:821px) {
+    li:hover {
+        height: 400px;
+        justify-content: space-between;
+    }
+
+    li:hover .invisible {
+        height: 75%;
+    }
+
+    ul:hover i.fa-plus {
+        opacity: 1;
+        font-size: 24px;
+    }
+
+    ul:hover h2 {
+        color: black;
+    }
+
+    li:hover i.fa-plus {
+        display: none;
+        opacity: 0;
+        font-size: 0;
+    }
+
+    li:hover i.fa-xmark {
+        display: block;
+        opacity: 1;
+        font-size: 24px;
+    }
+
+}
+
+@media (max-width:1000px) {
+    h1 {
+        font-size: 2.1rem;
+        padding: 2.3rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    img {
+        width: 75%;
+    }
+
+    li:focus i.fa-xmark {
+        font-size: 24px;
+    }
+}
+
+@media (max-width:700px) {
+    h1 {
+        font-size: 2rem;
+        padding: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    li {
+        padding: 1.25rem 2rem;
+    }
+
+    li:focus i.fa-xmark {
+        font-size: 18px;
+    }
 }
