@@ -100,11 +100,14 @@ li:focus i.fa-xmark {
     font-size: 24px;
 }
 
-img:focus {
+li:active {
     opacity: 0.7;
+    color: blue;
 }
 
-
+li:active .visible>h2 {
+    color: blue;
+}
 
 /********************
 *** Media Queries *** 
