@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 10% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5eb;
+}
+
+main {
+    height: 80%;
+    width: 80%;
+}
+
+ul {
+    list-style: none;
+    transition: 0.5s;
+}
+
+h1 {
+    font-size: 2.2rem;
+    padding: 2.5rem;
+}
+
+li {
+    transition: 0.5s;
+    height: 100px;
+    padding: 1.25rem 2.5rem;
+    border-top: 1px solid grey;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.visible {
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2 {
+    color: #0f61da;
+    transition: 0.5s;
+    font-size: 1.9rem;
+    max-width: 75%;
+}
+
+.visible>i {
+    opacity: 0;
+    transition: 0.5s;
+    font-size: 0;
+}
+
+.invisible {
+    height: 0
+}
+
+img {
+    display: block;
+    width: 50%;
+    max-width: 500px;
+    height: 100%;
+    margin: auto;
+}
+
+/******************************
+*** Hover and Focus effects *** 
+******************************/
+
+li:focus {
+    height: 400px;
+    justify-content: space-between;
+}
+
+li:focus .invisible {
+    height: 75%;
+}
+
+li:focus h2 {
+    color: black;
+}
+
+li:focus i.fa-plus {
+    display: none;
+    opacity: 0;
+    font-size: 0;
+}
+
+li:focus i.fa-xmark {
+    display: block;
+    opacity: 1;
+    font-size: 24px;
+}
+
+li:active {
+    opacity: 0.7;
+    color: blue;
+}
+
+li:active .visible>h2 {
+    color: blue;
+}
+
+/********************
+*** Media Queries *** 
+*********************/
+
+
+/* hover effects for desktop screens only */
+
+@media (min-width:821px) {
+    li:hover {
+        height: 400px;
+        justify-content: space-between;
+    }
+
+    li:hover .invisible {
+        height: 75%;
+    }
+
+    ul:hover i.fa-plus {
+        opacity: 1;
+        font-size: 24px;
+    }
+
+    ul:hover h2 {
+        color: black;
+    }
+
+    li:hover i.fa-plus {
+        display: none;
+        opacity: 0;
+        font-size: 0;
+    }
+
+    li:hover i.fa-xmark {
+        display: block;
+        opacity: 1;
+        font-size: 24px;
+    }
+
+}
+
+@media (max-width:1000px) {
+    h1 {
+        font-size: 2.1rem;
+        padding: 2.3rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    img {
+        width: 75%;
+    }
+
+    li:focus i.fa-xmark {
+        font-size: 24px;
+    }
+}
+
+@media (max-width:700px) {
+    h1 {
+        font-size: 2rem;
+        padding: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    li {
+        padding: 1.25rem 2rem;
+    }
+
+    li:focus i.fa-xmark {
+        font-size: 18px;
+    }
+}
